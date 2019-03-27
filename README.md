@@ -25,7 +25,7 @@ This experience is *not in any way* about becoming an expert JavaScript programm
 
 ### Specifically
 
-Below are a bunch of questions and indications of things to do. For each indication of something to do with code, there is also an accompanying question to answer or brief explanation to give. 
+Below are a bunch of questions and indications of things to do. For each indication of something to do with code, there is also an accompanying question to answer or brief explanation to give.
 
 **To complete and submit this assignment, you should:**
 
@@ -46,7 +46,7 @@ Below are a bunch of questions and indications of things to do. For each indicat
 
 * In answering questions, assume all of the questions include a *explain briefly* note -- you do NOT have to, and should not, write extended paragraphs. Be as concise as you can and explain in your own words. Don't worry about "whether it's enough" -- just worry about conveying your understanding so you can read it later, or even give it to someone else, and the answers will help/make sense.
 
-* It is not acceptable to copy and paste answers from the internet and submit them as your own. If you cite things, make sure you provide a citation, including to links. If you get information from a resource and rephrase it so you're basically explaining an idea, that's just fine for an explanatory purpose in this assignment, but you *must* cite any quotes or examples that aren't yours. 
+* It is not acceptable to copy and paste answers from the internet and submit them as your own. If you cite things, make sure you provide a citation, including to links. If you get information from a resource and rephrase it so you're basically explaining an idea, that's just fine for an explanatory purpose in this assignment, but you *must* cite any quotes or examples that aren't yours.
 
 * **For grading:** we are grading on...
 	* Following the instructions
@@ -57,13 +57,10 @@ Below are a bunch of questions and indications of things to do. For each indicat
 
 ### Names of people you have worked with on this assignment
 * List everyone's names and uniqnames who have worked on this assignment with you, **including your own name, but make sure YOUR name is first and bold**
-* Like this: 
-* **Jackie Cohen (jczetta)**
-* Yea-Ree Chang (cyearee)
-* Ruchi Ookalkar (ruchido)
-* Innocent Obi (innoobi)
-* Zhen Wang (alejwang)
-* etc.
+* Like this:
+* **Amy Chew**
+* Annabelle Tsai (altsai)
+* Jalin Parker (jalinp)
 
 ## Questions & code instructions
 
@@ -78,28 +75,55 @@ Some JavaScript code
 ```
 
 * **What does a code comment look like in JavaScript? What character/s do you have to put before a comment?**
+To provide a code comment in JavaScript, a coder must put "//" before their comment. Any line that begins with "//" can include relevant information that the computer will know not to run.
 
 * **Explain what needs to happen to get a JavaScript program to "run", given the JavaScript you've seen in this assignment.**
+You need:
+- a script tag, which is the script where we put the actual Javascript code
+- you need an "onload" command, broadly called an event, which calls the function you plan to use
 
 * **What functions in JavaScript seem to be similar in function to the `print` function in Python? (There are two.) Why might you use one and not the other? Explain briefly.**
+alert() and console.log()
+
+The difference is that alert is a popup and console.log is a print statement in the html
 
 * **What code would have to comment out to get rid of the pop-up box when you load the page? (Related to the last question.) Do that in the code file, and then, add code so that a text box will appear that contains the current date and time! *HINT:* Look through the rest of the code first...**
 
+We would comment out alert() and we would put in Date()
+
 * **How can you put your own name at the top where it currently says "A name"? Explain very briefly how to do so, and replace `A name` in the web page with your own name.**
+
+Just put something in quotations after document.querySelector('h1').innerHTML =.
 
 * **What does the word `document` represent in this code? Explain briefly.**
 
-* **What is happening in line 12 ( 
+It refers to the document we're using for this code. Similar to self in a python class.
+
+* **What is happening in line 12 (
 		`document.querySelector('#items').innerHTML = document.getElementsByTagName('li').length`
 )? Explain, briefly (<= 2 sentences).**
 
+It's assigning to the items id the number of elements that are tagged "li," which means list and then it's counting their number by using .length.
+
 * **What color would the background of this page be <u>if there were no JavaScript in this page</u>?**
+
+The background color would become white.
 
 * **Why are there a couple of gray boxes on the screen with a different colored border? How could you edit this code to make them a different color? Explain briefly. Then edit the code to make those boxes some shade of blue, of your choosing.**
 
+The below code inside the p tag is creating the gray colored boxes and the border.  
+background-color: #b3b3b3;
+border: 3px solid #FFFFFF;
+
+This code below will change the boxes with blue background.
+background-color: ##3556ca;
+
 * **Edit the code so that, if you highlight `McGill University` and copy it, you see the text `O Canada` near the bottom of the page. Briefly explain why you made the edits that you did -- how did you know/figure out what to do?**
+I created a new id element called "Canada". I implemented oncopy event on the list item "Mcgill University". In the script tag, I created another function called copyFunctionMcgill. When I copy the words Mcgill University, the oncopy event will be triggered which will run the function copyFunctionMcgill that will render "O Canada" on the page.
 
 * **In the original code, when you click the button that says `Wow`, you see a text box! Wow. Explain briefly in your own words why the following code causes that to happen:**
+
+The onclick listener is waiting for the user to click. When the click occurs the function handleClick will run which will create the alert.
 
 ```js
 function handleClick(){
@@ -113,7 +137,6 @@ function handleClick(){
 ```
 
 
-
 * **Knowing what you learned from the previous question, add code/markup to the `jsPracticeLab.html` file *so that* there is a button with the text `Spring Equinox 2019` on it somewhere on the page, and when that button is clicked, a text box containing the text `March 20, 2019` appears. (There's no function -- that I am aware of -- to automatically get this info, you've got to type it yourself.)**
 
 
@@ -123,14 +146,26 @@ function handleClick(){
 * **Check out the file `jquerylib_submit_example.html`. This is an example of code that uses a package called `jQuery` (and this will need you to have an internet connection to run it properly, although the other file does not). Check out resources above for more on jQuery!**
 
 * **When you enter input that isn't valid, you see an error that is red. Why is the error in red? Why is the response for valid inputs blue?**
+Error input is red because there is a class called "error" that makes the input red.
+Valid input is blue because there is a class called "good" that makes the input blue.
 
 * **What is this line `var regex = /^[a-zA-Z]+$/;` helping with? And if you googled something to figure that out, what did you google, and what, briefly, did you learn? (If you didn't need to google, you can leave that out, but explain briefly what that line is helping the program do, anyway.)**
+This is an expression that checks whether the required field(s) in the HTML form contains only letters. The expression checks the input against alphabet A-Z.
 
 * **What's different about the syntax of conditional statements in JavaScript, compared to Python?**
+In Python, the conditions in if statements do not need parenthesis. Following the condition is a semi colon. The block of code that occurs, if the condition is true, is indented under the if statement. Indentation in is not required in Javascript whereas Python relies on indentation.
+
+In Javascript, the conditions in if statements need parenthesis. The block of code that occurs if the condition is true has to be in curly brackets.
 
 * **What do you think the `10000` refers to in the code `.fadeOut(10000)`?**
+It determines the duration of the fade animation.
 
 * **What do you think is going on with the following code at the beginning of the program? Note that the most important thing to do for answering this question is to be thoughtful and clear, not to be absolutely correct:**
+document.ready()
+Prepares the the code in the documents to be ready to execute Javascript code. In other words, the code in document.ready() will run once the DOM is ready for Javascript code to run.
+("form").submit(function(event)
+The submit event occurs when the form is submitted. The submit event will trigger the function(event) to execute.
+
 
 ```js
 $(document).ready(function(){
